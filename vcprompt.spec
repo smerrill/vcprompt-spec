@@ -7,9 +7,6 @@ License:        GPLv2+
 URL:            http://hg.gerg.ca/vcprompt/
 Source0:        http://hg.gerg.ca/vcprompt/archive/%{version}.tar.gz
 
-BuildRequires:  gcc
-BuildRequires:  make
-
 %description
 vcprompt is a little C program that prints a short string, to be
 included in your shell prompt, with barebones information about the
@@ -30,12 +27,12 @@ POSIX-compliant system with a C99 compiler.
 make %{?_smp_mflags}
 
 %install
-rm -rf $RPM_BUILD_ROOT
-%make_install PREFIX=/usr
+%make_install PREFIX=%{prefix}
 
 %files
-%doc /usr/man/man1/vcprompt.1.gz
-/usr/bin/vcprompt
+%doc README.txt
+%{_mandir}/man1/vcprompt.1.*
+%{_bindir}/vcprompt
 
 %changelog
 * Tue Jul 16 2013 Steven Merrill <steven.merrill@gmail.com> - 1.1-1
