@@ -27,11 +27,11 @@ POSIX-compliant system with a C99 compiler.
 make %{?_smp_mflags}
 
 %install
-%make_install PREFIX=%{_prefix}
+%make_install PREFIX=%{_prefix} MANDIR=%{buildroot}%{_mandir}/man1
 
 %files
 %doc README.txt
-%{_prefix}/man/man1/vcprompt.1*
+%{_mandir}/man1/vcprompt.1*
 %{_bindir}/vcprompt
 
 %changelog
