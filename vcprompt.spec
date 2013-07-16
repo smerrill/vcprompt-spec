@@ -1,7 +1,7 @@
 Name:           vcprompt
 Version:        1.1
 Release:        1%{?dist}
-Summary:        An efficient program to print VCS information on your prompt.
+Summary:        An efficient program to print VCS information on your prompt
 
 License:        GPLv2+
 URL:            http://hg.gerg.ca/vcprompt/
@@ -9,7 +9,7 @@ Source0:        http://hg.gerg.ca/vcprompt/archive/%{version}.tar.gz
 
 %description
 vcprompt is a little C program that prints a short string, to be
-included in your shell prompt, with barebones information about the
+included in your shell prompt, with bare-bones information about the
 current working directory for various version control systems. It is
 designed to be small and lightweight rather than comprehensive.
 
