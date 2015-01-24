@@ -1,11 +1,12 @@
 Name:           vcprompt
-Version:        1.1
+Version:        1.2.1
 Release:        1%{?dist}
-Summary:        An efficient program to print VCS information on your prompt
+Summary:        Version control information in your prompt
 
 License:        GPLv2+
-URL:            http://hg.gerg.ca/vcprompt/
-Source0:        http://hg.gerg.ca/vcprompt/archive/%{version}.tar.gz
+URL:            https://bitbucket.org/gward/vcprompt
+Source0:        https://bitbucket.org/gward/vcprompt/downloads/vcprompt-%{version}.tar.gz
+Patch0:         man-escape.patch
 
 %description
 vcprompt is a little C program that prints a short string, to be
@@ -21,13 +22,15 @@ standard C library and POSIX calls. It should work on any
 POSIX-compliant system with a C99 compiler.
 
 %prep
-%setup -q
+%autosetup
 
 %build
+%configure
 make %{?_smp_mflags}
 
 %install
-%make_install PREFIX=%{_prefix} MANDIR=%{buildroot}%{_mandir}/man1
+make install DESTDIR=%{buildroot} PREFIX=%{_prefix} MANDIR=%{buildroot}%{_mandir}/man1
+chmod -x %{buildroot}%{_mandir}/man1/vcprompt.1*
 
 %files
 %doc README.txt
