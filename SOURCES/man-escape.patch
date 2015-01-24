@@ -1,0 +1,7 @@
+--- vcprompt.1  2015-01-24 13:16:54.678844345 -0500
++++ vcprompt.1  2015-01-24 13:16:48.800015604 -0500
+@@ -271,3 +271,3 @@ in your prompt. For example, add
+ if [ "$PS1" ]; then
+-  PS1='\\u@\\h $(vcprompt -f "[%b]")\$ '
++  PS1='\\u@\\h $(vcprompt -f "[%b]")$ '
+ fi
