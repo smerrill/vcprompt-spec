@@ -38,6 +38,10 @@ chmod -x %{buildroot}%{_mandir}/man1/vcprompt.1*
 %{_bindir}/vcprompt
 
 %changelog
+* Sat Jan 24 2015 Steven Merrill <steven.merrill@gmail.com> - 1.2.1-1
+- Updated to 1.2.1, incorporated a lot of packaging feedback, fixed a small man
+page issue.
+
 * Tue Jul 16 2013 Steven Merrill <steven.merrill@gmail.com> - 1.1-1
 - Initial vcprompt RPM.
 
